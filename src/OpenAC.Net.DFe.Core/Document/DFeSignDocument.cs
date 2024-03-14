@@ -40,12 +40,13 @@ public abstract class DFeSignDocument<TDocument> : DFeDocument<TDocument> where 
     }
 
     /// <summary>
-    /// Metodo que define se deve ou não serialziar a assinatura.
+    /// Método que define se deve ou não serializar a assinatura.
     /// </summary>
     /// <returns></returns>
     protected virtual bool ShouldSerializeSignature()
     {
-        return !Signature.SignatureValue.IsEmpty() &&
+        return Signature != null &&
+               !Signature.SignatureValue.IsEmpty() &&
                !Signature.SignedInfo.Reference.DigestValue.IsEmpty() &&
                !Signature.KeyInfo.X509Data.X509Certificate.IsEmpty();
     }

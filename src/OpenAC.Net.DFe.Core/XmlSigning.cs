@@ -306,7 +306,7 @@ namespace OpenAC.Net.DFe.Core
                 KeyInfo = keyInfo,
                 SignedInfo =
                 {
-                    CanonicalizationMethod = SignedXml.XmlDsigExcC14NTransformUrl,
+                    CanonicalizationMethod = SignedXml.XmlDsigC14NTransformUrl,
                     SignatureMethod = GetSignatureMethod(digest)
                 }
             };
